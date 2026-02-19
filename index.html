@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Holiday Countdown</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="noise"></div>
+
+  <header>
+    <p class="label">International</p>
+    <h1>Holiday<br/><em>Countdown</em></h1>
+  </header>
+
+  <main>
+    <!-- Country selector -->
+    <div class="country-selector">
+      <button class="country-btn active" data-code="CZ">
+        <span class="flag">🇨🇿</span>
+        <span class="name">Česko</span>
+      </button>
+      <button class="country-btn" data-code="US">
+        <span class="flag">🇺🇸</span>
+        <span class="name">USA</span>
+      </button>
+      <button class="country-btn" data-code="DE">
+        <span class="flag">🇩🇪</span>
+        <span class="name">Německo</span>
+      </button>
+    </div>
+
+    <!-- Info panel -->
+    <div class="info-panel">
+      <div class="holiday-meta">
+        <p class="next-label">Příští svátek</p>
+        <h2 class="holiday-name" id="holidayName">—</h2>
+        <p class="holiday-local" id="holidayLocal"></p>
+        <p class="holiday-date" id="holidayDate">—</p>
+      </div>
+    </div>
+
+    <!-- Countdown -->
+    <div class="countdown" id="countdown">
+      <div class="loading" id="loadingState">
+        <div class="spinner"></div>
+        <span>Načítám…</span>
+      </div>
+
+      <div class="digits" id="digits" style="display:none">
+        <div class="unit">
+          <span class="number" id="days">00</span>
+          <span class="unit-label">Dny</span>
+        </div>
+        <div class="sep">:</div>
+        <div class="unit">
+          <span class="number" id="hours">00</span>
+          <span class="unit-label">Hodiny</span>
+        </div>
+        <div class="sep">:</div>
+        <div class="unit">
+          <span class="number" id="minutes">00</span>
+          <span class="unit-label">Minuty</span>
+        </div>
+        <div class="sep">:</div>
+        <div class="unit">
+          <span class="number" id="seconds">00</span>
+          <span class="unit-label">Sekundy</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Powered by <a href="https://date.nager.at" target="_blank">Nager.Date API</a></p>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
